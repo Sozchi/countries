@@ -1,10 +1,17 @@
-import logo from './logo.svg';
+import React from "react";
+// import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App(props)
+{
+  let data = props.data;
+  let countryList = data.map( ( list ) => 
+    <li key={list.numericCode} className="allCountries">{list.name}</li>
+  );
   return (
     <div className="App">
-      <header className="App-header">
+      <ul>{countryList}</ul>
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +24,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }
